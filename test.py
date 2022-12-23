@@ -23,6 +23,6 @@ if st.button('lista'):
 if st.button('lower'):
     st.write(convert_upper(clist))
 if st.button('count'):
-    st.write(count(clist))
+    st.write('count ',count(clist))
 
 
