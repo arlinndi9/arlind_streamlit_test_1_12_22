@@ -1,29 +1,28 @@
 import streamlit as st
 
-text=input('text:')
-def convert_list():
-        '''
-        a=text.split(' ')
-        st.button('button',a)
-        st.write(a)
-        '''
-        l=text.split(' ')
-        return l
-print(convert_list())
+def convert_list(utext):
+    lista=utext.split()
+    return lista
 
-def conwert_lower():
-    l=[]
-    a=convert_list()
-    for i in a:
-        lovercase=i.lower()
-        l.append(lovercase)
-    return l
+def convert_upper(text):
 
-print(conwert_lower())
+    lowercaselist=[]
+    for i in text:
+        i=i.lower()
+        lowercaselist.append(i)
+    return lowercaselist
 
-def count():
-    a=convert_list()
-    return len(a)
+def count(text_list):
+    return len(text_list)
 
-print(count())
+text=st.text_input('text:')
+clist=convert_list(text)
+
+if st.button('lista'):
+    st.write(convert_list(text))
+if st.button('lower'):
+    st.write(convert_upper(clist))
+if st.button('count'):
+    st.write(count(clist))
+
 
